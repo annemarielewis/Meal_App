@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-
+import { Spinner } from "reactstrap";
 
 export default function RandomDish() {
   const [recipe, setRecipe] = useState(null);
@@ -11,7 +11,7 @@ export default function RandomDish() {
       const response = await axios.get(
         `https://www.themealdb.com/api/json/v1/1/random.php`
       );
-      console.log(response)
+      console.log(response);
       setRecipe(response.data.meals[0]);
     };
     getRecipe();
@@ -26,18 +26,17 @@ export default function RandomDish() {
   //a ternary that outputs the planet after the axios call is done and "Finding planets..." before the planets are found from teh axios call"
   return recipe ? (
     <Link to={`/country/meal/${recipe.idMeal}`}>
-    <div className="detail">
-      
-      <h1>Dish of the Day: {recipe.strMeal}</h1>
+      <div className="detail">
+        <h1>Random Fun Dish:</h1> 
+        <h2>{recipe.strMeal}</h2>
 
-      <ul>
-
-      </ul>
-      <img className='random-img' src={recipe.strMealThumb} />
-      
-    </div>
+        <ul></ul>
+        <img className="random-img" src={recipe.strMealThumb} />
+      </div>
     </Link>
   ) : (
-    <h3>Finding Recipe... Yummy!</h3>
+    <Spinner className="m-5" color="primary">
+      Loading...
+    </Spinner>
   );
 }

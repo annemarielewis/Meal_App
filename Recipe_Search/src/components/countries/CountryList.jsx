@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"; //react library
 import { Link } from "react-router-dom"; //React Router library
 // import "bootstrap";
 import React from "react";
+import { Spinner } from "reactstrap";
 
 let response;
 
@@ -34,6 +35,8 @@ export default function CountryList() {
       ))}
     </div>
   ) : (
-    <h3>Finding Countries... Yummy!</h3>
+    <Spinner className="m-5" color="primary">
+    Loading...
+  </Spinner>
   );
 }

@@ -18,7 +18,6 @@ export default function Main() {
         <Route path="/countries" element={<CountryList />} />
         <Route path="/countries/:country" element={<CountryMeals />} />
         <Route path="/country/meal/:id" element={<Recipe />}/>
-        
         <Route path="/categories" element={<CategoryList />} />
         <Route path="/categories/:category" element={<CategoryMeals />} />
         <Route path="/category/meal/:id" element={<Recipe />}/>
