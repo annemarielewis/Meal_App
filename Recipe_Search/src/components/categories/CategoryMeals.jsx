@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
-import { Link, useNaivate, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { Spinner, Card, CardBody, CardTitle, Button } from 'reactstrap'
 
-export default function CategoryMeals() {
+export default function CategoryMeals(props) {
     // navigate to individual meal
     // api link uses individual id number found in meals list (idMeal)
     // https://www.themealdb.com/api/json/v1/1/lookup.php?i=52874
-    let navigate = useNaivate()
+    let navigate = useNavigate()
     const showMeal = (meal) => {
         navigate(`${meal.name}`)
     }
@@ -24,7 +24,7 @@ export default function CategoryMeals() {
         getMeals()
     }, [])
     // if none, show loading sign
-    if (props.catergory.length === 0){
+    if (category.length === 0){
         return (
             <Spinner className="m-5" color="primary">
                 Loading...

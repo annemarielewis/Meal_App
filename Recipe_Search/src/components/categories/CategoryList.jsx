@@ -8,7 +8,7 @@ import { Spinner, Card, CardBody, CardTitle, CardText, Button } from 'reactstrap
 // https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef
 // https://www.themealdb.com/api/json/v1/1/lookup.php?i=52874
 
-export default function CategoryList() {
+export default function CategoryList(props) {
     const [categories, setCategories] = useState([])
 
     useEffect(()=> {
@@ -21,7 +21,7 @@ export default function CategoryList() {
     }, [])
 
     // loading when the cards are loading
-    if (props.caterogies.length === 0) {
+    if (categories.length === 0) {
         return (
             <Spinner className="m-5" color="primary">
                 Loading...

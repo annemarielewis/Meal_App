@@ -40,3 +40,26 @@
 .read-the-docs {
   color: #888;
 }
+
+.detail {
+  border: black 1px solid;
+}
+
+.random-img {
+  width:300px
+}
+
+li {
+  list-style: none;
+}
+
+header {
+  background-image: url('./assets/dish2.png');
+  background-size: cover;
+  min-height: 40vh;
+  width: 100%;
+  background-position: 0 60%;
+  overflow: hidden;  
+}
+
+

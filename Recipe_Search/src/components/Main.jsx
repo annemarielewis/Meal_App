@@ -3,6 +3,10 @@ import { Route, Routes } from "react-router-dom";
 //importing components:
 import CountryList from "./countries/CountryList";
 import CountryMeals from "./countries/CountryMeals";
+import CategoryMeals from "./categories/CategoryMeals";
+import CategoryList from './categories/CategoryList'
+
+
 import Recipe from "./Recipe"
 import Home from './Home'
 
@@ -14,6 +18,10 @@ export default function Main() {
         <Route path="/countries" element={<CountryList />} />
         <Route path="/countries/:country" element={<CountryMeals />} />
         <Route path="/country/meal/:id" element={<Recipe />}/>
+        
+        <Route path="/categories" element={<CategoryList />} />
+        <Route path="/categories/:category" element={<CategoryMeals />} />
+        <Route path="/category/meal/:id" element={<Recipe />}/>
       </Routes>
     </div>
   );
