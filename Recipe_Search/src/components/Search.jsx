@@ -18,9 +18,9 @@ const Search = () => {
 
 
   return (
-    <div>
+    <div className='search'>
  
-      <input
+      <input className='search-input'
         type="text"
         placeholder="Search..."
         value={query}
@@ -29,10 +29,10 @@ const Search = () => {
         
       />
       <Link to={`/search/${query}`}>
-      <button >Search</button>
+      <button className='search-button'>Search</button>
       </Link>
     </div>
   );
 };
 
-export default Search;
+export default Search; //test
