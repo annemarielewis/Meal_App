@@ -75,13 +75,13 @@ li {
 }
 
 .footer div:nth-child(1) {
-  color:red;
+  color:#ff0000;
 }
 .footer div:nth-child(2) {
-  color:green;
+  color:#00ff00;
 }
 .footer div:nth-child(3) {
-  color:yellow;
+  color:#ffff00;
 }
 
 
