@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Search = () => {
   const [query, setQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+  const navigate = useNavigate()
 
   const handleInputChange = (e) => {
-    console.log(e.keyCode)
-    if (e.keyCode === 13) {     
-        console.log('inside')
-        // return(<Link to={`/search/${query}`}></Link>)
-        window.location.href = `/search/${query}`
+    // console.log(e.keyCode)
+    if (e.keyCode === 13) {          
+        navigate (`/search/${query}`)        
       }
     setQuery(e.target.value);
   };
