@@ -30,8 +30,8 @@ export default function CategoryMeals(props) {
         )
     } else {
         return(
-            <div>
-                <h1>Meals</h1>
+            <div className='catergory'>
+                <h1 className='page-title'>Meals</h1>
                 {meals.map((meal)=> (
                     <Card style={{ width: '18rem' }} key={meal.idMeal}>
                         <img alt='src = .strMealThumb' src={meal.strMealThumb} />

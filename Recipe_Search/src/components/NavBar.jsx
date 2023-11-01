@@ -4,7 +4,7 @@ import { Nav, NavItem, NavLink } from 'reactstrap'
 export default function NavBar() {
     
   return (
-    <div>
+    <div className='nav'>
       {/* <Nav>
         <NavItem>
           <NavLink active href="#">
@@ -22,9 +22,9 @@ export default function NavBar() {
           </NavLink>
         </NavItem>
       </Nav> */}
-      <Link to="/"> Home </Link>
-      <Link to="/countries"> Countries </Link>
-      <Link to="/categories"> Categories </Link>
+      <Link to="/" className='link'> Home </Link>
+      <Link to="/countries" className='link'> Countries </Link>
+      <Link to="/categories" className='link'> Categories </Link>
     </div>
   );
 }

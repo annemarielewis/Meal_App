@@ -29,10 +29,10 @@ export default function CategoryList(props) {
         )
     } else {
         return(
-            <div>
-                <h1>Categories: </h1>
+            <div className='categories'>
+                <h1 className='page-title'>Categories: </h1>
                 {categories.map((category)=> (
-                    <Card style={{ width: '18rem' }} key={category.idCategory} >
+                    <Card style={{ width: '18rem' }} key={category.idCategory} className='category-card'>
                         <img alt={category.strCategory} src={category.strCategoryThumb} />
                         <CardBody>
                         <CardTitle tag="h5">

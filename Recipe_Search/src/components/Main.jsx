@@ -12,7 +12,7 @@ import Home from './Home'
 
 export default function Main() {
   return (
-    <div>
+    <div className="main-outer">
       <Routes>
         <Route path="/" element= {<Home />} />
         <Route path="/countries" element={<CountryList />} />
