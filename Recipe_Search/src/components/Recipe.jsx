@@ -53,8 +53,8 @@ export default function Recipe() {
         <div>
           <ul className="block">
             <h1>Ingredients:</h1>
-            {getIngredients(recipe).map((ingredient) => (
-              <li>{ingredient}</li>
+            {getIngredients(recipe).map((ingredient,i ) => (
+              <li key={i}>{ingredient}</li>
             ))}
           </ul>
         </div>
