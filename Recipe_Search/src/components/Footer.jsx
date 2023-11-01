@@ -8,7 +8,7 @@ export default function Footer() {
       <CardFooter className="footer">
         <div>
           Anne Marie :
-          <a href="https://www.linkedin.com/in/amlewiscodes/" target="_blank">
+          <a href="https://www.linkedin.com/in/amlewiscodes/" target="_blank"className="linkedin-link">
             <FontAwesomeIcon
               icon={faLinkedin}
               bounce
@@ -16,7 +16,7 @@ export default function Footer() {
               style={{ color: "#ff0000" }}
             />
           </a>
-          <a href="https://github.com/annemarielewis" target="_blank">
+          <a href="https://github.com/annemarielewis" target="_blank" className="github-link">
             <FontAwesomeIcon
               icon={faGithub}
               shake
@@ -28,7 +28,7 @@ export default function Footer() {
 
         <div>
           Darcy :
-          <a href="https://www.linkedin.com/in/darcystruble/" target="_blank">
+          <a href="https://www.linkedin.com/in/darcystruble/" target="_blank"className="linkedin-link">
             <FontAwesomeIcon
               icon={faLinkedin}
               bounce
@@ -36,7 +36,7 @@ export default function Footer() {
               style={{ color: "#00ff00" }}
             />
           </a>
-          <a href="https://github.com/darcystruble" target="_blank">
+          <a href="https://github.com/darcystruble" target="_blank" className="github-link">
             <FontAwesomeIcon
               icon={faGithub}
               shake
@@ -48,7 +48,7 @@ export default function Footer() {
 
         <div>
           Josh :
-          <a href="https://www.linkedin.com/in/josh-g-hutchison/" target="_blank">
+          <a href="https://www.linkedin.com/in/josh-g-hutchison/" target="_blank" className="linkedin-link">
             <FontAwesomeIcon
               icon={faLinkedin}
               bounce
@@ -56,7 +56,7 @@ export default function Footer() {
               style={{ color: "#ffff00" }}
             />
           </a>
-          <a href="https://github.com/JoshHutchison" target="_blank">
+          <a href="https://github.com/JoshHutchison" target="_blank" className="github-link">
             <FontAwesomeIcon
               icon={faGithub}
               shake
