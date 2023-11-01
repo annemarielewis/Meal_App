@@ -1,8 +1,17 @@
 //importing libraries and packages
+import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import {
+  Card,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+  CardText,
+  Button,
+} from "reactstrap";
 
 export default function Recipe() {
   let { id } = useParams();
@@ -27,19 +36,33 @@ export default function Recipe() {
 
   //a ternary that outputs the planet after the axios call is done and "Finding planets..." before the planets are found from teh axios call"
   return recipe ? (
-    <div className="detail">
+    <>
       <h1>Meal: {recipe.strMeal}</h1>
       <h2>Category: {recipe.strCategory}</h2>
-      <h2>Directions: {recipe.strInstructions}</h2>
-      <ul>
-        Ingredients:
-        {getIngredients(recipe).map((ingredient) => (
-          <li>{ingredient}</li>
-        ))}
-      </ul>
-      <img src={recipe.strMealThumb} />
-      <Link to="/countries"> Pick Different Type of Food</Link>
-    </div>
+      <Button>Save Recipe</Button>
+      <div className="flex">
+        <div className="block">
+          <img
+            alt="Food"
+            style={{ width: "40rem" }}
+            src={recipe.strMealThumb}
+          />
+          <br></br>
+          <Link to="/countries"> Pick Different Type of Food</Link>
+        </div>
+        <div>
+          <ul className="block">
+            <h1>Ingredients:</h1>
+            {getIngredients(recipe).map((ingredient) => (
+              <li>{ingredient}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <p>
+        <h2>Directions: </h2> {recipe.strInstructions}
+      </p>
+    </>
   ) : (
     <h3>Finding Recipe... Yummy!</h3>
   );
