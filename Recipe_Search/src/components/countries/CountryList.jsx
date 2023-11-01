@@ -25,18 +25,18 @@ export default function CountryList() {
 
   return countries ? (
     <div className="countries">
-    <h1>Type of Food:</h1>
-      {countries.map((country,i) => (
+      <h1 className="page-title">Type of Food:</h1>
+      {countries.map((country, i) => (
         <Link key={i} to={`/countries/${country.strArea}`}>
           <div className="country-card">
-            <h3>{country.strArea}</h3>
+            <h3 className="page-title">{country.strArea}</h3>
           </div>
         </Link>
       ))}
     </div>
   ) : (
     <Spinner className="m-5" color="primary">
-    Loading...
-  </Spinner>
+      Loading...
+    </Spinner>
   );
 }

@@ -1,4 +1,5 @@
 import NavBar from "./NavBar";
+import Search from "./Search";
 import headerImage from '../assets/dish2.png'
 
 export default function Header() {
@@ -6,8 +7,8 @@ export default function Header() {
     <>
       <header className="header">
         <NavBar/>   
-        <div className="header-img">
-
+        <div className="search-bar">
+          <Search></Search>
         </div>
         {/* <img src={headerImage} alt="" /> */}
       </header>

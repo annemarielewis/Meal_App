@@ -9,6 +9,7 @@ import CategoryList from './categories/CategoryList'
 
 import Recipe from "./Recipe"
 import Home from './Home'
+import SearchList from "./SearchList";
 
 export default function Main() {
   return (
@@ -21,6 +22,10 @@ export default function Main() {
         <Route path="/categories" element={<CategoryList />} />
         <Route path="/categories/:category" element={<CategoryMeals />} />
         <Route path="/category/meal/:id" element={<Recipe />}/>
+
+        <Route path="/search/:search" element={<SearchList />} />        
+        <Route path="/search/meal/:id" element={<Recipe />}/>
+
       </Routes>
     </div>
   );
