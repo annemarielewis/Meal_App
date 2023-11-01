@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { Spinner, Card, CardBody, CardTitle, Button } from 'reactstrap'
 
@@ -7,22 +7,20 @@ export default function CategoryMeals(props) {
     // navigate to individual meal
     // api link uses individual id number found in meals list (idMeal)
     // https://www.themealdb.com/api/json/v1/1/lookup.php?i=52874
-    let navigate = useNavigate()
-    const showMeal = (meal) => {
-        navigate(`${meal.name}`)
-    }
-
     let { category } = useParams()
+    // console.log(category)
 
-    const [meals, setMeals] = useState()
+    const [meals, setMeals] = useState([])
 
     useEffect(()=> {
         const getMeals = async () => {
-            const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
+            let response = await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
+            console.log(response)
             setMeals(response.data.meals)
         }
         getMeals()
     }, [])
+    console.log(meals)
     // if none, show loading sign
     if (category.length === 0){
         return (
@@ -35,7 +33,7 @@ export default function CategoryMeals(props) {
             <div>
                 <h1>Meals</h1>
                 {meals.map((meal)=> (
-                    <Card style={{ width: '18rem' }} key={idMeal}>
+                    <Card style={{ width: '18rem' }} key={meal.idMeal}>
                         <img alt='src = .strMealThumb' src={meal.strMealThumb} />
                         <CardBody>
                             <CardTitle tag="h5">

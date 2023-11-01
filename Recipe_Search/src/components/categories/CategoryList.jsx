@@ -33,7 +33,7 @@ export default function CategoryList(props) {
                 <h1>Categories: </h1>
                 {categories.map((category)=> (
                     <Card style={{ width: '18rem' }} key={category.idCategory} >
-                        <img alt={category.strCategory} src={category.strCatergoryThumb} />
+                        <img alt={category.strCategory} src={category.strCategoryThumb} />
                         <CardBody>
                         <CardTitle tag="h5">
                             {category.strCategory}
