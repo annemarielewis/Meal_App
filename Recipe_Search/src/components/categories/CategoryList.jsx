@@ -50,15 +50,15 @@ export default function CategoryList(props) {
                         <CardText>
                             {category.strCatergoryDescription}
                         </CardText>
-                        <Button>
-                            <Link key={category} to={`/categories/${category.strCategory}`} >Find Meals</Link>
+                        <Button className="button">
+                            <Link key={category} to={`/categories/${category.strCategory}`} className="link">Find Meals</Link>
                         </Button>
                     </CardBody>
                     </Card>
                 ))}
                 <div>
-                    <Button color="primary">
-                        <Link to="/">Home</Link>
+                    <Button color="primary" className="back-button">
+                        <Link to="/" className="link">Home</Link>
                     </Button>
                     </div>
             </div>

@@ -10,15 +10,23 @@ header {
 
 /* NAV */
 .nav {
-  border: 2px solid yellow;
+  /* border: 2px solid yellow; */
+  display: flex;
+  justify-content: flex-end;
+  background-color: #335912;
 }
 
 .link {
-  border: 2px solid orangered;
-  margin: 0 20px;
-  /* padding: 0 20px; */
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  margin: 0 5px;
+  padding: 5px 10px;
 }
-
+.link:hover {
+  color: #fbd967;
+}
 
 /* List Components */
 .countries, .meals, .categories, .catergory {
@@ -26,7 +34,7 @@ header {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
   width: fit-content;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 .page-title {
   margin: 40px auto;

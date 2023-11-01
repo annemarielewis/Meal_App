@@ -4,7 +4,6 @@ import axios from 'axios'
 import { Spinner, Card, CardBody, CardTitle, Button } from 'reactstrap'
 
 export default function CategoryMeals(props) {
-    // navigate to individual meal
     // api link uses individual id number found in meals list (idMeal)
     // https://www.themealdb.com/api/json/v1/1/lookup.php?i=52874
     let { category } = useParams()
@@ -39,13 +38,15 @@ export default function CategoryMeals(props) {
                             <CardTitle tag="h5">
                                 {meal.strMeal}
                             </CardTitle>
-                            <Button>
-                                <Link key={meal.idMeal} to={`/country/meal/${meal.idMeal}`}>Get Recipe</Link>
+                            <Button className='button'>
+                                <Link key={meal.idMeal} to={`/country/meal/${meal.idMeal}`} className='link'>Get Recipe</Link>
                             </Button>
                         </CardBody>
                     </Card>
                 ))}
-
+                <Button color="primary" className="back-button">
+                    <Link to="/categories" className="link">Home</Link>
+                </Button>
             </div>
         )
     }
