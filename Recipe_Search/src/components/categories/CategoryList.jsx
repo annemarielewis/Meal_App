@@ -1,7 +1,14 @@
-import axios from 'axios'
-import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { Spinner, Card, CardBody, CardTitle, CardText, Button } from 'reactstrap'
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import {
+  Spinner,
+  Card,
+  CardBody,
+  CardTitle,
+  CardText,
+  Button,
+} from "reactstrap";
 
 // Category > Meal in Category > Individual meal
 // https://www.themealdb.com/api/json/v1/1/categories.php
@@ -9,16 +16,18 @@ import { Spinner, Card, CardBody, CardTitle, CardText, Button } from 'reactstrap
 // https://www.themealdb.com/api/json/v1/1/lookup.php?i=52874
 
 export default function CategoryList(props) {
-    const [categories, setCategories] = useState([])
+  const [categories, setCategories] = useState([]);
 
-    useEffect(()=> {
-        const getCategories = async () => {
-            let response = await axios.get(`https://www.themealdb.com/api/json/v1/1/categories.php`)
-            console.log(response)
-            setCategories(response.data.categories)
-        }
-        getCategories()
-    }, [])
+  useEffect(() => {
+    const getCategories = async () => {
+      let response = await axios.get(
+        `https://www.themealdb.com/api/json/v1/1/categories.php`
+      );
+      console.log(response);
+      setCategories(response.data.categories);
+    };
+    getCategories();
+  }, []);
 
     // loading when the cards are loading
     if (categories.length === 0) {
@@ -29,10 +38,10 @@ export default function CategoryList(props) {
         )
     } else {
         return(
-            <div>
-                <h1>Categories: </h1>
+            <div className='categories'>
+                <h1 className='page-title'>Categories: </h1>
                 {categories.map((category)=> (
-                    <Card style={{ width: '18rem' }} key={category.idCategory} >
+                    <Card style={{ width: '18rem' }} key={category.idCategory} className='category-card'>
                         <img alt={category.strCategory} src={category.strCategoryThumb} />
                         <CardBody>
                         <CardTitle tag="h5">

@@ -1,3 +1,31 @@
+/* MAIN ELEMENT STYLING */
+#root {
+  width: 100vw;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  background-color: #f2f2f2;
+}
+.outer {
+  border: 2px solid salmon;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 85vw;
+  min-height: 100vh;
+  
+}
+.main-outer {
+  margin: 50px auto;
+  width: 100%;
+  border: 2px solid slateblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .block {
   list-style: none; /* Remove bullets */
   padding: 2rem; /* Remove default padding */
@@ -25,6 +53,7 @@
 body {
   margin: 0;
   display: flex;
+  justify-content: center;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;

@@ -1,10 +1,9 @@
-import { Link } from 'react-router-dom'
-import { Nav, NavItem, NavLink } from 'reactstrap'
+import { Link } from "react-router-dom";
+import { Nav, NavItem, NavLink } from "reactstrap";
 
 export default function NavBar() {
-    
   return (
-    <div>
+    <div className='nav'>
       {/* <Nav>
         <NavItem>
           <NavLink active href="#">
@@ -22,9 +21,9 @@ export default function NavBar() {
           </NavLink>
         </NavItem>
       </Nav> */}
-      <Link to="/"> Home </Link>
-      <Link to="/countries"> Countries </Link>
-      <Link to="/categories"> Categories </Link>
+      <Link to="/" className='link'> Home </Link>
+      <Link to="/countries" className='link'> Browse by Country </Link>
+      <Link to="/categories" className='link'> Browse by Category </Link>
     </div>
   );
 }
