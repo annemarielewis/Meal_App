@@ -67,5 +67,25 @@ li {
   list-style: none;
 }
 
+.footer {
+  display:flex;
+  width: 100%;
+  justify-content: space-between;
+  background-color: rgb(165, 164, 164);
+}
+
+.footer div:nth-child(1) {
+  color:red;
+}
+.footer div:nth-child(2) {
+  color:green;
+}
+.footer div:nth-child(3) {
+  color:yellow;
+}
+
+
+
+
 
 
