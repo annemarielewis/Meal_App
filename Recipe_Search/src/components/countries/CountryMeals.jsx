@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { Card, CardBody, CardTitle, Button, Spinner } from "reactstrap";
 
 export default function CountryMeals() {
   //Here, useParams() is taking the id from what's in the route in Main.js.
@@ -26,14 +27,19 @@ export default function CountryMeals() {
     <div className="meals">
       {meals.map((meal) => (
         <Link key={meal.idMeal} to={`/country/meal/${meal.idMeal}`}>
-          <div className="meal-card">
-            <h3>{meal.strMeal}</h3>
-            
-          </div>
+          <Card style={{ width: "18rem" }}>
+            <img alt={`picture of ${meal.strMeal}`} src={meal.strMealThumb} />
+            <CardBody>
+              <CardTitle tag="h5">{meal.strMeal}</CardTitle>
+              <Button>Choose Meal</Button>
+            </CardBody>
+          </Card>
         </Link>
       ))}
     </div>
   ) : (
-    <h3>Finding your country's meals... yummy!</h3>
+    <Spinner className="m-5" color="primary">
+      Loading...
+    </Spinner>
   );
 }

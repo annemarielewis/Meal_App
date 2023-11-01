@@ -2,6 +2,8 @@
 import axios from "axios"; //package
 import { useState, useEffect } from "react"; //react library
 import { Link } from "react-router-dom"; //React Router library
+import "bootstrap";
+import React from "react";
 
 let response;
 
