@@ -1,3 +1,5 @@
+import axios from 'axios'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Spinner, Card, CardBody, CardTitle, CardText, Button } from 'reactstrap'
 
@@ -6,7 +8,18 @@ import { Spinner, Card, CardBody, CardTitle, CardText, Button } from 'reactstrap
 // https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef
 // https://www.themealdb.com/api/json/v1/1/lookup.php?i=52874
 
-export default function CategoryList(props) {
+export default function CategoryList() {
+    const [categories, setCategories] = useState([])
+
+    useEffect(()=> {
+        const getCategories = async () => {
+            let response = await axios.get(`https://www.themealdb.com/api/json/v1/1/categories.php`)
+            console.log(response)
+            setCategories(response.data.categories)
+        }
+        getCategories()
+    }, [])
+
     // loading when the cards are loading
     if (props.caterogies.length === 0) {
         return (
@@ -17,24 +30,26 @@ export default function CategoryList(props) {
     } else {
         return(
             <div>
-                {/* MAP IN HERE, PUT CARD IN MAP */}
-                <Card style={{ width: '18rem' }} >
-                    <img alt='src = .strCaterogryThumb' src="https://picsum.photos/300/200" />
-                    <CardBody>
-                    <CardTitle tag="h5">
-                        title = .strCategroy
-                    </CardTitle>
-                    <CardText>
-                        text = .strCatergoryDescription
-                    </CardText>
-                    <Button>
-                        <Link></Link> Go to category meals
-                    </Button>
-                </CardBody>
-                </Card>
+                <h1>Categories: </h1>
+                {categories.map((category)=> (
+                    <Card style={{ width: '18rem' }} key={category.idCategory} >
+                        <img alt={category.strCategory} src={category.strCatergoryThumb} />
+                        <CardBody>
+                        <CardTitle tag="h5">
+                            {category.strCategory}
+                        </CardTitle>
+                        <CardText>
+                            {category.strCatergoryDescription}
+                        </CardText>
+                        <Button>
+                            <Link key={category} to={`/categories/${category.strCategory}`} >Find Meals</Link>
+                        </Button>
+                    </CardBody>
+                    </Card>
+                ))}
                 <div>
                     <Button color="primary">
-                        Button back to home
+                        <Link to="/">Home</Link>
                     </Button>
                     </div>
             </div>

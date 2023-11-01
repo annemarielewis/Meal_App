@@ -1,7 +1,9 @@
-import { Link, useNaivate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { Link, useNaivate, useParams } from 'react-router-dom'
+import axios from 'axios'
 import { Spinner, Card, CardBody, CardTitle, Button } from 'reactstrap'
 
-export default function CategoryMeals(props) {
+export default function CategoryMeals() {
     // navigate to individual meal
     // api link uses individual id number found in meals list (idMeal)
     // https://www.themealdb.com/api/json/v1/1/lookup.php?i=52874
@@ -9,6 +11,18 @@ export default function CategoryMeals(props) {
     const showMeal = (meal) => {
         navigate(`${meal.name}`)
     }
+
+    let { category } = useParams()
+
+    const [meals, setMeals] = useState()
+
+    useEffect(()=> {
+        const getMeals = async () => {
+            const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
+            setMeals(response.data.meals)
+        }
+        getMeals()
+    }, [])
     // if none, show loading sign
     if (props.catergory.length === 0){
         return (
@@ -19,18 +33,21 @@ export default function CategoryMeals(props) {
     } else {
         return(
             <div>
-                {/* MAP IN HERE, PUT CARD INSIDE MAP */}
-                <Card style={{ width: '18rem' }} key={idMeal}>
-                    <img alt='src = .strMealThumb' src="https://picsum.photos/300/200" />
-                    <CardBody>
-                    <CardTitle tag="h5">
-                        title = .strMeal
-                    </CardTitle>
-                    <Button>
-                        <Link></Link> Go to category meals
-                    </Button>
-                </CardBody>
-                </Card>
+                <h1>Meals</h1>
+                {meals.map((meal)=> (
+                    <Card style={{ width: '18rem' }} key={idMeal}>
+                        <img alt='src = .strMealThumb' src={meal.strMealThumb} />
+                        <CardBody>
+                            <CardTitle tag="h5">
+                                {meal.strMeal}
+                            </CardTitle>
+                            <Button>
+                                <Link key={meal.idMeal} to={`/country/meal/${meal.idMeal}`}>Get Recipe</Link>
+                            </Button>
+                        </CardBody>
+                    </Card>
+                ))}
+
             </div>
         )
     }
