@@ -16,7 +16,6 @@ header {
   background-color: #335912;
   margin-bottom: 20px;
 }
-
 .nav > .link {
   font-weight: bold;
   color: white;
@@ -51,17 +50,23 @@ button {
   align-items: center;
   width: 100%;
 }
+.detail-outer {
+  text-decoration: none;
+  color: #1f330e;
+  background-color: #e2e2e2;
+}
+.detail-outer:hover {
+  color: #335912;
+}
 .detail {
   display: flex;
   justify-content: space-between;
-
+  padding: 10px;
   width: 100%;
-  border: 5px solid orange;
-  /* background-color: lightblue; */
-
 }
 .detail > .detail-text {
   width: 70%;
+  padding-right: 15px;
 }
 .seperate {
   display: flex;
@@ -90,8 +95,15 @@ button {
   text-decoration: none;
   color: #1f330e;
 }
+.small-outer:hover {
+  color: #335912;
+}
+.small-card {
+  cursor: pointer;
+  width: 255px;
+}
 .small-meal {
-  width: 260px;
+  width: 255px;
 }
 .small-meal > .small-head {
   font-size: 1.2rem;
@@ -109,6 +121,12 @@ button {
   place-content:  center;
   grid-gap: 20px;
   /* width: fit-content; */
+}
+.list > .link {
+  color: #1f330e;
+}
+.list > .link:hover {
+  color: #335912;
 }
 .page-title {
   margin: 40px auto;
@@ -142,7 +160,7 @@ li {
   list-style: none;
 }
 
-@media screen and (min-width: 481px)and (max-width: 830px){
+@media screen and (max-width: 830px){
   header {
     min-height: 450px;
     background-position: 0 70%;
@@ -157,22 +175,31 @@ li {
     text-align: center;
   }
   .detail {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  width: 100%;
-  border: 5px solid orange;
-  /* background-color: lightblue; */
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    /* border: 5px solid orange; */
+    /* background-color: lightblue; */
+  }
+  .seperate {
+    display: flex;
+    flex-direction: column;
+  }
+  .search-message {
+    padding-right: 0;
+    font-size: 1.2rem;
+    padding-bottom: 2px;
+  }
 }
-}
 
-@media screen and (min-width: 250px)and (max-width: 480px){
+@media screen and (max-width: 480px){
   header {
     min-height: 200px;
     background-position: 0 70%;
     overflow: hidden;
+    border-width: 10px;
   }
   .countries, .meals, .categories, .catergory {
     display: flex;
@@ -182,11 +209,25 @@ li {
     width: 100%;
     text-align: center;
   }
-  .nav {
-    justify-content: space-evenly;
-  }
   .nav > .link {
     font-weight: normal;
-    font-size: .6rem;
+    font-size: .5rem;
+  }
+  .nav {
+    margin-bottom: 5px;
+  }
+  .small-outer {
+    flex-direction: column;
+    align-items: center;
+    width: 255px;
+  }
+  input {
+    font-size: .7rem;
+    height: 25px;
+    width: 150px;
+  }
+  button {
+    height: 25px;
+    font-size: .7rem;
   }
 }

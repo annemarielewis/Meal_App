@@ -24,10 +24,10 @@ export default function CountryList() {
   console.log(countries);
 
   return countries ? (
-    <div className="countries">
+    <div className="countries list">
       <h1 className="page-title">Type of Food:</h1>
       {countries.map((country, i) => (
-        <Link key={i} to={`/countries/${country.strArea}`}>
+        <Link key={i} to={`/countries/${country.strArea}`} className="link">
           <div className="country-card">
             <h3 className="page-title">{country.strArea}</h3>
           </div>

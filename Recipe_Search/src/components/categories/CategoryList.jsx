@@ -38,7 +38,7 @@ export default function CategoryList(props) {
         )
     } else {
         return(
-            <div className='categories'>
+            <div className='categories list'>
                 <h1 className='page-title'>Categories: </h1>
                 {categories.map((category)=> (
                     <Link key={category} to={`/categories/${category.strCategory}`} className="link">

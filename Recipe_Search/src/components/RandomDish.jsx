@@ -25,7 +25,7 @@ export default function RandomDish() {
 
   //a ternary that outputs the planet after the axios call is done and "Finding planets..." before the planets are found from teh axios call"
   return recipe ? (
-    <Link to={`/country/meal/${recipe.idMeal}`}>
+    <Link to={`/country/meal/${recipe.idMeal}`} className="detail-outer" >
       <div className="detail">
         <div className="detail-text">
           <h1>Random Fun Dish:</h1> 

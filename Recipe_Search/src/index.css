@@ -96,4 +96,9 @@ body {
 /* button:hover {
   border-color: #646cff;
 } */
-
+@media screen and (max-width: 480px){
+  .outer {
+    margin-top: 20px;
+    width: 95vw;
+  }
+}

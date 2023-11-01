@@ -16,7 +16,7 @@ export default function SmallMeals () {
     console.log(randomRecipe)
     return (
         <Link to={`/category/meal/${randomRecipe.idMeal}`} className="small-outer">
-            <div>
+            <div className="small-card">
                <img src={randomRecipe.strMealThumb} className="small-img"/>
                <h2 className="small-head">{randomRecipe.strMeal}</h2>
             </div>
