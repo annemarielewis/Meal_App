@@ -33,8 +33,8 @@ export default function Recipe() {
       <h2>Directions: {recipe.strInstructions}</h2>
       <ul>
         Ingredients:
-        {getIngredients(recipe).map((ingredient) => (
-          <li>{ingredient}</li>
+        {getIngredients(recipe).map((ingredient,i) => (
+          <li key={i}>{ingredient}</li>
         ))}
       </ul>
       <img src={recipe.strMealThumb} />

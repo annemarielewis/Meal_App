@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
 import { Nav, NavItem, NavLink } from 'reactstrap'
 
-export default function Nav() {
+export default function NavBar() {
     
   return (
     <div>
-      <Nav>
+      {/* <Nav>
         <NavItem>
           <NavLink active href="#">
             <Link to="/">Home</Link>
@@ -13,7 +13,7 @@ export default function Nav() {
         </NavItem>
         <NavItem>
           <NavLink href="#">
-            <Link to="/countries">Counteries</Link>
+            <Link to="/countries">Countries</Link>
           </NavLink>
         </NavItem>
         <NavItem>
@@ -21,7 +21,10 @@ export default function Nav() {
             <Link to="/categories">Categories</Link>
           </NavLink>
         </NavItem>
-      </Nav>
+      </Nav> */}
+      <Link to="/"> Home </Link>
+      <Link to="/countries"> Countries </Link>
+      <Link to="/categories"> Categories </Link>
     </div>
   );
 }
