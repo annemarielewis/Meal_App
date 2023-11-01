@@ -11,6 +11,7 @@ import {
   CardSubtitle,
   CardText,
   Button,
+  Spinner,
 } from "reactstrap";
 
 export default function Recipe() {
@@ -64,6 +65,8 @@ export default function Recipe() {
       </p>
     </>
   ) : (
-    <h3>Finding Recipe... Yummy!</h3>
+    <Spinner className="m-5" color="primary">
+    Loading...
+  </Spinner>
   );
 }
