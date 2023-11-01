@@ -41,20 +41,16 @@ export default function CategoryList(props) {
             <div className='categories'>
                 <h1 className='page-title'>Categories: </h1>
                 {categories.map((category)=> (
+                    <Link key={category} to={`/categories/${category.strCategory}`} className="link">
                     <Card style={{ width: '18rem' }} key={category.idCategory} className='category-card'>
                         <img alt={category.strCategory} src={category.strCategoryThumb} />
                         <CardBody>
-                        <CardTitle tag="h5">
+                        <CardTitle tag="h5" className="category-name">
                             {category.strCategory}
                         </CardTitle>
-                        <CardText>
-                            {category.strCatergoryDescription}
-                        </CardText>
-                        <Button className="button">
-                            <Link key={category} to={`/categories/${category.strCategory}`} className="link">Find Meals</Link>
-                        </Button>
                     </CardBody>
                     </Card>
+                    </Link>
                 ))}
                 <div>
                     <Button color="primary" className="back-button">

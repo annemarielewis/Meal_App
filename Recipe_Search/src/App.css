@@ -10,31 +10,49 @@ header {
 
 /* NAV */
 .nav {
-  /* border: 2px solid yellow; */
   display: flex;
   justify-content: flex-end;
   background-color: #335912;
 }
 
-.link {
+.nav > .link {
   font-weight: bold;
-  text-decoration: none;
   color: white;
   font-size: 1.2rem;
   margin: 0 5px;
   padding: 5px 10px;
 }
-.link:hover {
+.nav > .link:hover {
   color: #fbd967;
 }
+/* search */
+.search-button {
+  background-color: #335912;
+  color: white;
+}
+
+/* HOME PAGE */
+.detail {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  border: 5px solid orange;
+  /* background-color: lightblue; */
+
+}
+.detail > .detail-text {
+  width: 70%;
+}
+
 
 /* List Components */
 .countries, .meals, .categories, .catergory {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  place-content:  center;
   grid-gap: 20px;
-  width: fit-content;
-  /* border: 2px solid red; */
+  /* width: fit-content; */
 }
 .page-title {
   margin: 40px auto;
@@ -44,6 +62,7 @@ header {
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 } */
+
 
 
 
@@ -67,5 +86,51 @@ li {
   list-style: none;
 }
 
+@media screen and (min-width: 481px)and (max-width: 830px){
+  header {
+    min-height: 450px;
+    background-position: 0 70%;
+    overflow: hidden;
+  }
+  .countries, .meals, .categories, .catergory {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .page-title {
+    width: 100%;
+    text-align: center;
+  }
+  .detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
+  width: 100%;
+  border: 5px solid orange;
+  /* background-color: lightblue; */
 
+}
+}
+
+@media screen and (min-width: 250px)and (max-width: 480px){
+  header {
+    min-height: 200px;
+    background-position: 0 70%;
+    overflow: hidden;
+  }
+  .countries, .meals, .categories, .catergory {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .page-title {
+    width: 100%;
+    text-align: center;
+  }
+  .nav {
+    justify-content: space-evenly;
+  }
+  .nav > .link {
+    font-weight: normal;
+    font-size: .6rem;
+  }
+}

@@ -27,10 +27,11 @@ export default function RandomDish() {
   return recipe ? (
     <Link to={`/country/meal/${recipe.idMeal}`}>
       <div className="detail">
-        <h1>Random Fun Dish:</h1> 
-        <h2>{recipe.strMeal}</h2>
-
-        <ul></ul>
+        <div className="detail-text">
+          <h1>Random Fun Dish:</h1> 
+          <h2>{recipe.strMeal}</h2>
+          <ul></ul>
+        </div>
         <img className="random-img" src={recipe.strMealThumb} />
       </div>
     </Link>
