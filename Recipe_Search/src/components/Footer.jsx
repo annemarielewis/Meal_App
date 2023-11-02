@@ -6,6 +6,7 @@ export default function Footer() {
   return (
     <div className="footer">
       <CardFooter className="footer">
+        <div className="inner-footer">
         <div>
           Anne Marie :
           <a href="https://www.linkedin.com/in/amlewiscodes/" target="_blank"className="linkedin-link">
@@ -27,7 +28,7 @@ export default function Footer() {
         </div>
 
         <div>
-          Darcy :
+            Darcy :
           <a href="https://www.linkedin.com/in/darcystruble/" target="_blank"className="linkedin-link">
             <FontAwesomeIcon
               icon={faLinkedin}
@@ -65,6 +66,34 @@ export default function Footer() {
             />
           </a>
         </div>
+
+        </div>
+        <div className="inner-footer">
+        <div className="footer-section">
+            
+            <ul>
+              <li><a href="#">Recipes</a></li>
+              <li><a href="#">Videos</a></li>
+              <li><a href="#">Articles</a></li>
+            </ul>
+          </div>
+          <div className="footer-section">
+            
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Advertise</a></li>
+            </ul>
+          </div>
+          <div className="footer-section">
+            
+            <ul>
+              <li><a href="#" target="_blank">Facebook</a></li>
+              <li><a href="#" target="_blank">Twitter</a></li>
+              <li><a href="#" target="_blank">Instagram</a></li>
+            </ul>
+          </div>
+          </div>
       </CardFooter>
     </div>
   );
