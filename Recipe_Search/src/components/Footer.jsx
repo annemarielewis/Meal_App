@@ -8,7 +8,7 @@ export default function Footer() {
       <CardFooter className="footer">
         <div className="inner-footer">
         <div>
-          Anne Marie :
+          Annemarie :
           <a href="https://www.linkedin.com/in/amlewiscodes/" target="_blank"className="linkedin-link">
             <FontAwesomeIcon
               icon={faLinkedin}

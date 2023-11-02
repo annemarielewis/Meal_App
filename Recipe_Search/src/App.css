@@ -159,13 +159,68 @@ button {
 li {
   list-style: none;
 }
+/* 
+.footer {
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-around;
+  background-color: rgb(255, 0, 0);
+}
+
+.footer div:nth-child(1) {
+  color:#ff0000;
+}
+.footer div:nth-child(2) {
+  color:#00ff00;
+}
+.footer div:nth-child(3) {
+  color:#ffff00;
+}
+.inner-footer {
+  display:flex;  
+  width: 100%;
+  justify-content: space-around;
+}
+.footer-section {
+  color:blue;
+} */
+
+/* .search-container {
+  display: flex;
+  align-items: center;
+} 
+
+.search-input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.search-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+} */
+
+
+
 
 .footer {
   display:flex;
   flex-direction: column;
   width: 100%;
   justify-content: space-around;
-  background-color: rgb(165, 164, 164);
+  background-color: rgb(179, 179, 179);
 }
 
 .footer div:nth-child(1) {
@@ -185,7 +240,7 @@ li {
 .footer-section {
   color:blue;
 }
-
+/* 
 .search-container {
   display: flex;
   align-items: center;
@@ -210,62 +265,7 @@ li {
 
 .search-button:hover {
   background-color: #0056b3;
-}
-
-
-
-
-.footer {
-  display:flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: space-around;
-  background-color: rgb(165, 164, 164);
-}
-
-.footer div:nth-child(1) {
-  color:#ff0000;
-}
-.footer div:nth-child(2) {
-  color:#00ff00;
-}
-.footer div:nth-child(3) {
-  color:#ffff00;
-}
-.inner-footer {
-  display:flex;  
-  width: 100%;
-  justify-content: space-around;
-}
-.footer-section {
-  color:blue;
-}
-
-.search-container {
-  display: flex;
-  align-items: center;
-}
-
-.search-input {
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-right: 10px;
-}
-
-.search-button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-.search-button:hover {
-  background-color: #0056b3;
-}
+} */
 
 
 
